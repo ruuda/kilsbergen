@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,500,600,700,900" rel="stylesheet">
+  <style>
+  * { margin: 0; padding: 0; }
+  html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.6em;
+    background-color: #fff;
+  }
+  #content {
+    max-width: 42em;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    background-color: #fff;
+    color: #333;
+  }
+  #main {
+    padding: 2em;
+  }
+  h1, h2, h3 {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #000;
+    margin-bottom: 1rem;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: 500;
+    color: #444;
+  }
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+    margin-top: 3em;
+  }
+  code {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.85rem;
+    background-color: #f0f0f0;
+    padding: 0.15rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    border-radius: 0.2rem;
+  }
+  h3 > code {
+    margin-left: -0.1rem;
+  }
+  a {
+    color: #36d;
+    text-decoration: none;
+  }
+  p, ul, pre {
+    margin-bottom: 2em;
+  }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <aside>
+      <nav>
+        Foo, bar baz.
+      </nav>
+    </aside>
+    <div id="main">
+      <nav>
+        <ul>
+          {% for nav_item in nav %}
+          <li>{{ nav_item }}</li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <section>
+        {{ page.content }}
+      </section>
+    </div>
+  </div>
+</body>
+</html>
