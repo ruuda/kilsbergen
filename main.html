@@ -23,6 +23,14 @@
     font-size: 16px;
     line-height: 1.59em;
     background-color: #fff;
+    min-height: 100%;
+    position: relative;
+  }
+  body {
+    /* Tricks to make the sidebar full-height on short pages. */
+    position: absolute;
+    height: 100%;
+    width: 100%;
   }
   #content {
     max-width: 46rem;
@@ -30,6 +38,7 @@
     margin-right: auto;
     position: relative;
     color: #333;
+    min-height: 100%;
   }
   #main {
     padding: 2rem;
@@ -37,7 +46,7 @@
   }
   #breadcrumbs {
     margin-bottom: 2.85rem;
-    opacity: 0.5;
+    opacity: 0.6;
     word-spacing: 0.3em;
   }
   #breadcrumbs a {
@@ -109,7 +118,7 @@
   ul {
     list-style-type: none;
   }
-  li:before {
+  #main li:before {
     color: #555;
     content: '\2022';
     display: inline-block;
@@ -117,7 +126,7 @@
     margin-left: -0.9rem;
     width: 0.9rem;
   }
-  li {
+  #main li {
     margin-left: 0.87rem;
   }
   #nav-prev-next {
@@ -142,15 +151,45 @@
     content: '\21a0';
     padding-left: 0.5em;
   }
+  aside {
+    position: absolute;
+    top: 0;
+    left: -102em;
+    width: 100em;
+    border-right: 1px solid #eee;
+    background-color: #fafafa;
+    height: 100%;
+    line-height: 2.5rem;
+  }
+  aside nav {
+    margin-top: 10rem;
+    width: 14rem;
+    float: right;
+  }
+  aside a {
+    color: #88a;
+  }
+  aside .toc-section {
+    font-weight: 600;
+  }
+  aside li {
+    border-left: 0.3em solid #e0e0f0;
+    padding-left: 0.8em;
+    margin-left: -1.1em;
+  }
+  aside li.current, aside li.toc-heading {
+    background-color: #eee;
+    border-left: 0.3em solid #88a;
+    padding-left: 0.8em;
+    margin-left: -1.1em;
+  }
+  aside li.toc-heading {
+    padding-left: 1.8em;
+  }
   </style>
 </head>
 <body>
   <div id="content">
-    <!-- <aside>
-      <nav>
-        Foo, bar baz.
-      </nav>
-    </aside> -->
     <div id="main">
       <nav id="breadcrumbs">
         <a href="{{ config.site_url|url }}">{{ config.site_name }}</a>
@@ -173,6 +212,29 @@
       </nav>
       {% endif %}
     </div>
+    <aside>
+      <nav>
+        <ul>
+        {% for nav_item in nav %}
+        <li class="toc-section"><a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a></li>
+          {% if nav_item.children %}
+          {% for nav_item in nav_item.children %}
+            {% if nav_item.active %}
+            <li class="toc-chapter current"><a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a></li>
+            {% for toc_item in page.toc %}
+              {% for toc_item in toc_item.children %}
+                <li class="toc-heading"><a href="{{ nav_item.url + toc_item.url|url }}">{{ toc_item.title }}</a></li>
+              {% endfor %}
+            {% endfor %}
+            {% else %}
+            <li class="toc-chapter"><a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+          {% endif %}
+        {% endfor %}
+        </ul>
+      </nav>
+    </aside>
   </div>
 </body>
 </html>
