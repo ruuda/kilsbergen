@@ -88,6 +88,9 @@ A copy of the License has been included in the root of the repository.
     font-size: 0.84rem;
     line-height: 1.59rem;
   }
+  .mono {
+    font-family: 'Roboto Mono', monospace;
+  }
   p > code,
   a > code,
   h3 > code,
@@ -296,21 +299,22 @@ A copy of the License has been included in the root of the repository.
     <aside>
       <nav>
         <ul>
-        {% for nav_item in nav -%}
-        <li class="toc-section"><a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a></li>
-          {% if nav_item.children -%}
-          {% for nav_item in nav_item.children -%}
-            {% if nav_item.active -%}
-            <li class="toc-chapter current"><a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a></li>
+        {% for section in nav -%}
+        <li class="toc-section"><a href="{{ section.url|url }}">{{ section.title }}</a></li>
+          {% if section.children -%}
+          {% for chapter in section.children -%}
+            <li class="toc-chapter
+              {% if chapter.meta.mono_title %} mono{% endif -%}
+              {% if chapter.active %} current{% endif -%}
+            "><a href="{{ chapter.url|url }}">{{ chapter.title }}</a></li>
+            {% if chapter.active -%}
             {% for toc_item in page.toc -%}
               <li><ul>
               {% for toc_item in toc_item.children -%}
-                <li class="toc-heading"><a href="{{ nav_item.url + toc_item.url|url }}">{{ toc_item.title }}</a></li>
+                <li class="toc-heading"><a href="{{ chapter.url + toc_item.url|url }}">{{ toc_item.title }}</a></li>
               {% endfor -%}
               </ul></li>
             {% endfor -%}
-            {% else -%}
-            <li class="toc-chapter"><a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a></li>
             {% endif -%}
           {% endfor -%}
           {% endif -%}
