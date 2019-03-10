@@ -46,11 +46,12 @@
   }
   #breadcrumbs {
     margin-bottom: 2.85rem;
-    opacity: 0.6;
     word-spacing: 0.3em;
+    color: #78a;
   }
   #breadcrumbs a {
     word-spacing: 0;
+    color: #78a;
   }
   section {
     margin-top: 1.3rem;
@@ -58,20 +59,17 @@
   h1, h2, h3 {
     font-weight: 500;
     font-size: 1rem;
-    color: #000;
+    color: #444;
     margin-bottom: 1.59rem;
   }
   h1 {
     font-size: 2rem;
     margin-bottom: 1.9rem;
-    font-weight: 500;
-    color: #444;
   }
   h2 {
     font-size: 1.59rem;
     margin-top: 3.38rem;
     margin-bottom: 1.39rem;
-    font-weight: 500;
   }
   code {
     font-family: 'Roboto Mono', monospace;
@@ -107,13 +105,14 @@
   pre {
     padding: 1.41rem;
     padding-right: 0;
-    background-color: #f0f0f0;
-    border-radius: 0.2rem;
-    border-left: 0.3rem solid #89b;
+    background-color: #f8f8f8;
+    border-radius: 0 0.2rem 0.2rem 0;
+    border-left: 0.3rem solid #d5d8e0;
     overflow-x: auto;
   }
   pre > code {
     margin-right: 1.41rem;
+    color: #555;
   }
   ul {
     list-style-type: none;
@@ -159,32 +158,45 @@
     border-right: 1px solid #eee;
     background-color: #fafafa;
     height: 100%;
-    line-height: 2.5rem;
   }
   aside nav {
-    margin-top: 10rem;
+    margin-top: 8.4rem;
     width: 14rem;
     float: right;
+    /* Put the active chapter border over the sidebar border. */
+    margin-right: -1px;
   }
   aside a {
-    color: #88a;
+    color: #78a;
   }
   aside .toc-section {
     font-weight: 600;
   }
-  aside li {
-    border-left: 0.3em solid #e0e0f0;
-    padding-left: 0.8em;
-    margin-left: -1.1em;
+  aside ul {
+    margin-bottom: 0;
   }
-  aside li.current, aside li.toc-heading {
-    background-color: #eee;
-    border-left: 0.3em solid #88a;
-    padding-left: 0.8em;
-    margin-left: -1.1em;
+  aside li ul {
+    /* This padding destroys the vertical rhythm,
+       but I somehow feel it is necessary. */
+    padding-top: 0.3rem;
+    padding-bottom: 0.4rem;
+  }
+  aside li.toc-section {
+    padding-top: 1.59rem;
+  }
+  aside li.toc-section a {
+    color: #36d;
+  }
+  aside li.current, aside li ul {
+    border-right: 0.3em solid #d5d8e0;
+    padding-left: 1em;
+    margin-left: -1em;
+  }
+  aside .current a {
+    color: #557;
   }
   aside li.toc-heading {
-    padding-left: 1.8em;
+    padding-left: 1.26em;
   }
   </style>
 </head>
@@ -222,9 +234,11 @@
             {% if nav_item.active %}
             <li class="toc-chapter current"><a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a></li>
             {% for toc_item in page.toc %}
+              <li><ul>
               {% for toc_item in toc_item.children %}
                 <li class="toc-heading"><a href="{{ nav_item.url + toc_item.url|url }}">{{ toc_item.title }}</a></li>
               {% endfor %}
+              </ul></li>
             {% endfor %}
             {% else %}
             <li class="toc-chapter"><a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a></li>
