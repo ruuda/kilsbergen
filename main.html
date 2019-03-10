@@ -35,16 +35,13 @@
     padding: 2rem;
     overflow: hidden;
   }
-  nav ul {
-    list-style: none;
-    color: #777;
+  #breadcrumbs {
+    margin-bottom: 2.85rem;
+    opacity: 0.5;
+    word-spacing: 0.3em;
   }
-  nav ul li {
-    display: inline;
-  }
-  nav ul li:after {
-    content: ' > ';
-    color: #bbb;
+  #breadcrumbs a {
+    word-spacing: 0;
   }
   section {
     margin-top: 1.3rem;
@@ -127,13 +124,13 @@
     margin-top: 3.18rem;
     padding-bottom: 3.18rem;
   }
-  #nav-prev, #nav-next {
+  #nav-prev, #nav-next, #repo-link {
     display: inline-block;
   }
   #nav-prev {
     float: left;
   }
-  #nav-next {
+  #nav-next, #repo-link {
     float: right;
     text-align: right;
   }
@@ -155,13 +152,13 @@
       </nav>
     </aside> -->
     <div id="main">
-      <!-- <nav>
-        <ul>
-          {% for nav_item in nav %}
-          <li>{{ nav_item.title }}</li>
-          {% endfor %}
-        </ul>
-      </nav> -->
+      <nav id="breadcrumbs">
+        <a href="{{ config.site_url|url }}">{{ config.site_name }}</a>
+        {% for nav_item in nav %}
+          {% include "nav.html" %}
+        {% endfor %}
+        <a id="repo-link" href="{{ config.repo_url|url }}">GitHub</a>
+      </nav>
       <section>
         {{ page.content }}
       </section>
