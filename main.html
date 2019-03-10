@@ -65,7 +65,7 @@ A copy of the License has been included in the root of the repository.
     word-spacing: 0;
     color: #78a;
   }
-  section {
+  article {
     margin-top: 1.3rem;
   }
   h1, h2, h3 {
@@ -282,9 +282,9 @@ A copy of the License has been included in the root of the repository.
         {% endfor -%}
         <a id="repo-link" href="{{ config.repo_url|url }}">GitHub</a>
       </nav>
-      <section>
+      <article>
         {{ page.content }}
-      </section>
+      </article>
       {% if page.next_page or page.previous_page -%}
       <nav id="nav-prev-next">
         {% if page.previous_page -%}
