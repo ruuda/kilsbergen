@@ -33,6 +33,7 @@
   }
   #main {
     padding: 2rem;
+    overflow: hidden;
   }
   nav ul {
     list-style: none;
@@ -122,6 +123,28 @@
   li {
     margin-left: 0.87rem;
   }
+  #nav-prev-next {
+    margin-top: 3.18rem;
+    padding-bottom: 3.18rem;
+  }
+  #nav-prev, #nav-next {
+    display: inline-block;
+  }
+  #nav-prev {
+    float: left;
+  }
+  #nav-next {
+    float: right;
+    text-align: right;
+  }
+  #nav-prev::before {
+    content: '\219e';
+    padding-right: 0.5em;
+  }
+  #nav-next::after {
+    content: '\21a0';
+    padding-left: 0.5em;
+  }
   </style>
 </head>
 <body>
@@ -142,6 +165,16 @@
       <section>
         {{ page.content }}
       </section>
+      {% if page.next_page or page.previous_page %}
+      <nav id="nav-prev-next">
+        {% if page.previous_page %}
+          <a id="nav-prev" href="{{ page.previous_page.url|url }}" title="{{ page.previous_page.title }}">Previous</a>
+        {% endif %}
+        {% if page.next_page %}
+          <a id="nav-next" href="{{ page.next_page.url|url }}" title="{{ page.next_page.title }}"/>Next</a>
+        {% endif %}
+      </nav>
+      {% endif %}
     </div>
   </div>
 </body>
