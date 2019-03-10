@@ -4,25 +4,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,500,600,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,600|Roboto:300,400,500,600,700,900" rel="stylesheet">
   <style>
+  /* Modular scale with exponent 1.26, about 2^(1/3), so we get 2em in there,
+     which is convenient. 1.26 is also close to (golden ratio)^0.5.
+     0.63em
+     0.80em
+     1.00em
+     1.26em
+     1.59em
+     2.00em
+     2.52em
+  */
+
   * { margin: 0; padding: 0; }
   html {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    line-height: 1.6em;
+    line-height: 1.59em;
     background-color: #fff;
   }
   #content {
-    max-width: 42em;
+    max-width: 46rem;
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    background-color: #fff;
     color: #333;
   }
   #main {
-    padding: 2em;
+    padding: 2rem;
   }
   nav ul {
     list-style: none;
@@ -35,33 +45,46 @@
     content: ' > ';
     color: #bbb;
   }
+  section {
+    margin-top: 1.3rem;
+  }
   h1, h2, h3 {
     font-weight: 500;
     font-size: 1rem;
     color: #000;
-    margin-bottom: 1rem;
+    margin-bottom: 1.59rem;
   }
   h1 {
-    font-size: 2em;
+    font-size: 2rem;
+    margin-bottom: 1.9rem;
     font-weight: 500;
     color: #444;
   }
   h2 {
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-weight: 400;
-    margin-top: 3em;
+    font-size: 1.59rem;
+    margin-top: 3.38rem;
+    margin-bottom: 1.39rem;
+    font-weight: 500;
   }
   code {
     font-family: 'Roboto Mono', monospace;
-    font-size: 0.85rem;
+    font-size: 0.84rem;
+    line-height: 1.59rem;
   }
-  p > code, a > code, h3 > code, li > code {
+  p > code,
+  a > code,
+  h3 > code,
+  li > code {
     background-color: #f0f0f0;
-    padding: 0.15rem;
+    padding: 0.13rem;
     padding-left: 0.3rem;
     padding-right: 0.3rem;
     border-radius: 0.2rem;
+    line-height: 1rem;
+  }
+  h3 {
+    margin-top: 2.29rem;
+    margin-bottom: 0.89rem;
   }
   h3 > code {
     margin-left: -0.1rem;
@@ -71,30 +94,51 @@
     text-decoration: none;
   }
   p, ul, pre {
-    margin-bottom: 2em;
+    /* Same space as line height, leave exactly one line blank. */
+    margin-bottom: 1.59em;
   }
   pre {
-    padding: 1em;
+    padding: 1.41rem;
+    padding-right: 0;
     background-color: #f0f0f0;
     border-radius: 0.2rem;
+    border-left: 0.3rem solid #89b;
+    overflow-x: auto;
+  }
+  pre > code {
+    margin-right: 1.41rem;
+  }
+  ul {
+    list-style-type: none;
+  }
+  li:before {
+    color: #555;
+    content: '\2022';
+    display: inline-block;
+    font-weight: 600;
+    margin-left: -0.9rem;
+    width: 0.9rem;
+  }
+  li {
+    margin-left: 0.87rem;
   }
   </style>
 </head>
 <body>
   <div id="content">
-    <aside>
+    <!-- <aside>
       <nav>
         Foo, bar baz.
       </nav>
-    </aside>
+    </aside> -->
     <div id="main">
-      <nav>
+      <!-- <nav>
         <ul>
           {% for nav_item in nav %}
           <li>{{ nav_item.title }}</li>
           {% endfor %}
         </ul>
-      </nav>
+      </nav> -->
       <section>
         {{ page.content }}
       </section>
