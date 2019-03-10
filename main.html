@@ -24,6 +24,17 @@
   #main {
     padding: 2em;
   }
+  nav ul {
+    list-style: none;
+    color: #777;
+  }
+  nav ul li {
+    display: inline;
+  }
+  nav ul li:after {
+    content: ' > ';
+    color: #bbb;
+  }
   h1, h2, h3 {
     font-weight: 500;
     font-size: 1rem;
@@ -44,6 +55,8 @@
   code {
     font-family: 'Roboto Mono', monospace;
     font-size: 0.85rem;
+  }
+  p > code, a > code, h3 > code, li > code {
     background-color: #f0f0f0;
     padding: 0.15rem;
     padding-left: 0.3rem;
@@ -60,6 +73,11 @@
   p, ul, pre {
     margin-bottom: 2em;
   }
+  pre {
+    padding: 1em;
+    background-color: #f0f0f0;
+    border-radius: 0.2rem;
+  }
   </style>
 </head>
 <body>
@@ -73,7 +91,7 @@
       <nav>
         <ul>
           {% for nav_item in nav %}
-          <li>{{ nav_item }}</li>
+          <li>{{ nav_item.title }}</li>
           {% endfor %}
         </ul>
       </nav>
