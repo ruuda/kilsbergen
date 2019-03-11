@@ -324,7 +324,7 @@ A copy of the License has been included in the root of the repository.
               {% if toc_item.children -%}
                 <li><ul>
                 {% for toc_item in toc_item.children -%}
-                  <li class="toc-heading"><a href="{{ chapter.url + toc_item.url|url }}">{{ toc_item.title }}</a></li>
+                  <li class="toc-heading"><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
                 {% endfor -%}
                 </ul></li>
                {% endif -%}
