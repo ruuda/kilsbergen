@@ -28,7 +28,7 @@ A copy of the License has been included in the root of the repository.
      1.59em
      2.00em
   */
-  * { margin: 0; padding: 0; }
+  * { margin: 0; padding: 0; border-spacing: 0; }
   html {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -99,7 +99,8 @@ A copy of the License has been included in the root of the repository.
   p > code,
   a > code,
   h3 > code,
-  li > code {
+  li > code,
+  td > code {
     background-color: #f0f0f0;
     padding: 0.13rem;
     padding-left: 0.3rem;
@@ -136,6 +137,12 @@ A copy of the License has been included in the root of the repository.
   }
   ul {
     list-style-type: none;
+  }
+  th, td {
+      padding-right: 2rem;
+  }
+  th {
+      text-align: left;
   }
   #main li:before {
     color: #555;
