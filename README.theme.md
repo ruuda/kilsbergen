@@ -1,9 +1,13 @@
-# Custom Docs Theme
+# Kilsbergen
 
-This directory contains a custom [MkDocs][mkdocs] theme. I prototyped it with
-the documentation for [Tako][tako], but I intend to deploy it more widely, also
-for [Pris][pris] and [Noblit][noblit]. It is not customizable: it supports
-everything I need, and nothing more.
+A clean [MkDocs][mkdocs] theme.
+
+This theme is designed for [Tako][tako], [Pris][pris], and [Noblit][noblit].
+It is not flexible on purpose: it supports everything I need, and nothing more.
+
+## Demos
+
+ * [Tako documentation][tako-docs]
 
 ## Features
 
@@ -12,11 +16,12 @@ everything I need, and nothing more.
 
 ## License
 
-The theme is licensed under the [Apache 2.0][apache2] license. In the generated
-documentation, it is fine to just link to this readme.
+Kilsbergen is licensed under the [Apache 2.0][apache2] license. In the generated
+documentation, it is fine to just link to this readme from a comment.
 
-[mkdocs]:  https://www.mkdocs.org/
-[tako]:    https://github.com/ruuda/tako
-[pris]:    https://github.com/ruuda/pris
-[noblit]:  https://github.com/ruuda/noblit
-[apache2]: https://www.apache.org/licenses/LICENSE-2.0
+[apache2]:   https://www.apache.org/licenses/LICENSE-2.0
+[mkdocs]:    https://www.mkdocs.org/
+[noblit]:    https://github.com/ruuda/noblit
+[pris]:      https://github.com/ruuda/pris
+[tako-docs]: https://ruuda.github.io/tako
+[tako]:      https://github.com/ruuda/tako
