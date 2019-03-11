@@ -8,6 +8,7 @@ It is not flexible on purpose: it supports everything I need, and nothing more.
 ## Demos
 
  * [Tako documentation][tako-docs]
+ * [Pris documentation][pris-docs]
 
 ## Features
 
@@ -22,6 +23,7 @@ documentation, it is fine to just link to this readme from a comment.
 [apache2]:   https://www.apache.org/licenses/LICENSE-2.0
 [mkdocs]:    https://www.mkdocs.org/
 [noblit]:    https://github.com/ruuda/noblit
+[pris-docs]: https://ruuda.github.io/pris
 [pris]:      https://github.com/ruuda/pris
 [tako-docs]: https://ruuda.github.io/tako
 [tako]:      https://github.com/ruuda/tako
