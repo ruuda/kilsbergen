@@ -310,11 +310,13 @@ A copy of the License has been included in the root of the repository.
             "><a href="{{ chapter.url|url }}">{{ chapter.title }}</a></li>
             {% if chapter.active -%}
             {% for toc_item in page.toc -%}
-              <li><ul>
-              {% for toc_item in toc_item.children -%}
-                <li class="toc-heading"><a href="{{ chapter.url + toc_item.url|url }}">{{ toc_item.title }}</a></li>
-              {% endfor -%}
-              </ul></li>
+              {% if toc_item.children -%}
+                <li><ul>
+                {% for toc_item in toc_item.children -%}
+                  <li class="toc-heading"><a href="{{ chapter.url + toc_item.url|url }}">{{ toc_item.title }}</a></li>
+                {% endfor -%}
+                </ul></li>
+               {% endif -%}
             {% endfor -%}
             {% endif -%}
           {% endfor -%}
