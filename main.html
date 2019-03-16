@@ -163,7 +163,7 @@ A copy of the License has been included in the root of the repository.
     color: #36d;
     text-decoration: none;
   }
-  p, ul, pre, table {
+  p, ul, ol, pre, table {
     /* Same space as line height, leave exactly one line blank. */
     margin-bottom: 1.59em;
   }
@@ -179,8 +179,9 @@ A copy of the License has been included in the root of the repository.
     margin-right: 1.41rem;
     color: #555;
   }
-  ul {
+  ul, ol {
     list-style-type: none;
+    counter-reset: item;
   }
   th, td {
       padding-right: 2rem;
@@ -188,7 +189,7 @@ A copy of the License has been included in the root of the repository.
   th {
       text-align: left;
   }
-  #main li:before {
+  #main ul li:before {
     color: #555;
     content: '\2022';
     display: inline-block;
@@ -196,8 +197,20 @@ A copy of the License has been included in the root of the repository.
     margin-left: -0.9rem;
     width: 0.9rem;
   }
-  #main li {
+  #main ul li {
     margin-left: 0.87rem;
+  }
+  #main ol li:before {
+    content: counter(item);
+    display: inline-block;
+    font-weight: 700;
+    width: 0.8rem;
+    margin-left: -1.6rem;
+    padding-right: 0.8rem;
+  }
+  #main ol li {
+    margin-left: 1.6rem;
+    counter-increment: item;
   }
   #nav-prev-next {
     margin-top: 3.18rem;
