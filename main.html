@@ -312,8 +312,8 @@ A copy of the License has been included in the root of the repository.
       <nav>
         <ul>
         {% for section in nav -%}
-        <li class="toc-section"><a href="{{ section.url|url }}">{{ section.title }}</a></li>
           {% if section.children -%}
+          <li class="toc-section"><a href="{{ section.children[0].url|url }}">{{ section.title }}</a></li>
           {% for chapter in section.children -%}
             <li class="toc-chapter
               {% if chapter.meta.mono_title %} mono{% endif -%}
@@ -331,6 +331,8 @@ A copy of the License has been included in the root of the repository.
             {% endfor -%}
             {% endif -%}
           {% endfor -%}
+          {% else -%}
+          <li class="toc-section"><a href="{{ section.url|url }}">{{ section.title }}</a></li>
           {% endif -%}
         {% endfor -%}
         </ul>
