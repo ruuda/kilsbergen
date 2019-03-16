@@ -40,9 +40,14 @@ A copy of the License has been included in the root of the repository.
   @font-face {
     font-family: Inter;
     font-style:  normal;
-    /* Note: Inter has medium at 500, and semibold at 600. But Inter semibold is more
-       like Roboto 500, so we say 500 here. */
     font-weight: 500;
+    src: url("https://rsms.me/inter/font-files/Inter-Medium.woff2?v=3.3") format("woff2"),
+         url("https://rsms.me/inter/font-files/Inter-Medium.woff?v=3.3") format("woff");
+  }
+  @font-face {
+    font-family: Inter;
+    font-style:  normal;
+    font-weight: 600;
     src: url("https://rsms.me/inter/font-files/Inter-SemiBold.woff2?v=3.3") format("woff2"),
          url("https://rsms.me/inter/font-files/Inter-SemiBold.woff?v=3.3") format("woff");
   }
@@ -106,7 +111,7 @@ A copy of the License has been included in the root of the repository.
     margin-top: 1.3rem;
   }
   h1, h2, h3 {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1rem;
     color: #444;
     margin-bottom: 1.59rem;
@@ -129,7 +134,10 @@ A copy of the License has been included in the root of the repository.
     font-family: 'Roboto Mono', monospace;
   }
   abbr {
-    font-variant-caps: all-small-caps;
+    text-transform: uppercase;
+    /* Downsize so caps are x-height, and compensate weight loss. */
+    font-size: 0.78rem;
+    font-weight: 500;
     letter-spacing: 0.05rem;
   }
   p > code,
@@ -257,6 +265,10 @@ A copy of the License has been included in the root of the repository.
     margin-left: -1em;
   }
   aside .current a {
+    font-weight: 600;
+  }
+  aside .current.mono a {
+    /* Roboto Mono 500 is about as heavy as Inter semibold (600). */
     font-weight: 500;
   }
   aside li.toc-heading {
