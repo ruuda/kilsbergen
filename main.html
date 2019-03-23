@@ -289,6 +289,16 @@ A copy of the License has been included in the root of the repository.
     padding-left: 1em;
   }
 
+  @media(max-width: 66rem)
+  {
+    #content {
+      /* Manual implementation of max-width: on narrower viewports,
+         auto-size the body.
+      */
+      grid-template-columns: 0 16rem auto 0;
+    }
+  }
+
   @media(max-width: 1150px)
   {
     html { font-size: 15px; }
@@ -297,6 +307,9 @@ A copy of the License has been included in the root of the repository.
   /* Move the sidebar TOC below content at small widths. */
   @media(max-width: 800px)
   {
+    #content {
+      display: block;
+    }
     aside {
       position: relative;
       top: 0;
@@ -313,7 +326,6 @@ A copy of the License has been included in the root of the repository.
       float: none;
     }
     #main {
-      margin-left: 2em;
       padding-bottom: 1.59em;
     }
     aside li.current, aside li ul {
