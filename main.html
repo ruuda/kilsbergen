@@ -244,9 +244,8 @@ A copy of the License has been included in the root of the repository.
     background-color: #fafafa;
   }
   aside nav {
-    grid-area: 1 / 2 / 2 / 3;
     margin-top: 8.4rem;
-    margin-bottom: 3rem;
+    padding-bottom: 3rem;
     width: 14rem;
     float: right;
     /* Put the active chapter border over the sidebar border. */
@@ -293,8 +292,7 @@ A copy of the License has been included in the root of the repository.
   {
     #content {
       /* Manual implementation of max-width: on narrower viewports,
-         auto-size the body.
-      */
+         auto-size the body. */
       grid-template-columns: 0 16rem auto 0;
     }
   }
@@ -311,14 +309,8 @@ A copy of the License has been included in the root of the repository.
       display: block;
     }
     aside {
-      position: relative;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: auto;
       border-top: 1px solid #eee;
       border-right: 0px none;
-      overflow: hidden;
     }
     aside nav {
       margin-left: 4em;
@@ -337,12 +329,12 @@ A copy of the License has been included in the root of the repository.
   @media(max-width: 650px)
   {
     #main {
-      margin-left: 0;
-      margin-right: 0;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
     aside nav {
-      margin-left: 2em;
-      margin-bottom: 1.59em;
+      margin-left: 2rem;
+      padding-bottom: 2rem;
     }
   }
 
