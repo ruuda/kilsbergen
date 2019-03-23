@@ -125,8 +125,9 @@ A copy of the License has been included in the root of the repository.
     font-size: 0.84rem;
     line-height: 1.59rem;
   }
-  .mono {
-    font-family: 'Roboto Mono', monospace;
+  h3 > code {
+    /* Roboto Mono 500 is about as heavy as Inter semibold (600). */
+    font-weight: 500;
   }
   abbr {
     text-transform: uppercase;
@@ -280,10 +281,6 @@ A copy of the License has been included in the root of the repository.
   aside .current a {
     font-weight: 600;
   }
-  aside .current.mono a, h3 > code {
-    /* Roboto Mono 500 is about as heavy as Inter semibold (600). */
-    font-weight: 500;
-  }
   aside li.toc-heading {
     padding-left: 1em;
   }
@@ -382,7 +379,6 @@ A copy of the License has been included in the root of the repository.
           <li class="toc-section"><a href="{{ section.children[0].url|url }}">{{ section.title }}</a></li>
           {% for chapter in section.children -%}
             <li class="toc-chapter
-              {% if chapter.meta.mono_title %} mono{% endif -%}
               {% if chapter.active %} current{% endif -%}
             "><a href="{{ chapter.url|url }}">{{ chapter.title }}</a></li>
             {% if chapter.active -%}
