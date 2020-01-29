@@ -7,8 +7,9 @@ It is not flexible on purpose: it supports everything I need, and nothing more.
 
 ## Demos
 
- * [Tako documentation][tako-docs]
+ * [Noblit documentation][noblit-docs]
  * [Pris documentation][pris-docs]
+ * [Tako documentation][tako-docs]
 
 ## Features
 
@@ -20,10 +21,11 @@ It is not flexible on purpose: it supports everything I need, and nothing more.
 Kilsbergen is licensed under the [Apache 2.0][apache2] license. In the generated
 documentation, it is fine to just link to this readme from a comment.
 
-[apache2]:   https://www.apache.org/licenses/LICENSE-2.0
-[mkdocs]:    https://www.mkdocs.org/
-[noblit]:    https://github.com/ruuda/noblit
-[pris-docs]: https://ruuda.github.io/pris
-[pris]:      https://github.com/ruuda/pris
-[tako-docs]: https://ruuda.github.io/tako
-[tako]:      https://github.com/ruuda/tako
+[apache2]:     https://www.apache.org/licenses/LICENSE-2.0
+[mkdocs]:      https://www.mkdocs.org/
+[noblit-docs]: https://ruuda.github.io/noblit
+[noblit]:      https://github.com/ruuda/noblit
+[pris-docs]:   https://ruuda.github.io/pris
+[pris]:        https://github.com/ruuda/pris
+[tako-docs]:   https://ruuda.github.io/tako
+[tako]:        https://github.com/ruuda/tako
