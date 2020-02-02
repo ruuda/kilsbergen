@@ -268,6 +268,7 @@ A copy of the License has been included in the root of the repository.
     grid-area: 1 / 1 / 2 / 3;
     border-right: 1px solid #eee;
     background-color: #fafafa;
+    color: #78a;
   }
   aside nav {
     margin-top: 9rem;
@@ -278,7 +279,7 @@ A copy of the License has been included in the root of the repository.
     margin-right: -1px;
   }
   aside a {
-    color: #78a;
+    color: inherit;
   }
   aside .toc-section {
     font-weight: 700;
@@ -291,9 +292,9 @@ A copy of the License has been included in the root of the repository.
     padding-bottom: 1.1rem;
   }
   aside li.toc-section {
-    padding-top: 1.7rem;
+    margin-top: 1.7rem;
   }
-  aside li.toc-section a {
+  aside li.toc-section {
     color: #36d;
   }
   aside li.current, aside li ul {
@@ -301,7 +302,7 @@ A copy of the License has been included in the root of the repository.
     padding-left: 1em;
     margin-left: -1em;
   }
-  aside .current a {
+  aside li.toc-chapter.current {
     font-weight: 600;
   }
   aside li.toc-heading {
@@ -335,13 +336,25 @@ A copy of the License has been included in the root of the repository.
     aside nav {
       margin-left: 4em;
       margin-top: 1.7em;
+      margin-right: 0;
       float: none;
+      width: auto;
     }
     #main {
       padding-bottom: 1.7em;
     }
+    /* Now that the TOC is full-width, adding the border on the right to
+       highlight the active page is not as clear anymore, it can be far away.
+       The current chapter is still in boldface, but that does not work for
+       section indexes. So point a guillemet at it as well. */
     aside li.current, aside li ul {
       border-right: 0px none;
+      position: relative;
+    }
+    aside li.current:before {
+      content: '\203a';
+      position: absolute;
+      left: 0;
     }
   }
 
