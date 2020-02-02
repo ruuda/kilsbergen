@@ -375,9 +375,8 @@ A copy of the License has been included in the root of the repository.
     <div id="main">
       <nav id="breadcrumbs">
         <a href="{{ config.site_url|url }}">{{ config.site_name }}</a>
-        {% for nav_item in nav -%}
-          {% include "nav.html" -%}
-        {% endfor -%}
+        {% if page.parent %} › <a href="{{ page.parent.children[0].url|url }}">{{ page.parent.title }}</a> {% endif %}
+        {% if not page.is_index or not page.parent %} › <a href="{{ page.url|url }}">{{ page.title }}</a> {% endif %}
         <a id="repo-link" href="{{ config.repo_url|url }}">GitHub</a>
       </nav>
       <article>
@@ -399,8 +398,11 @@ A copy of the License has been included in the root of the repository.
         <ul>
         {% for section in nav -%}
           {% if section.children -%}
-          <li class="toc-section"><a href="{{ section.children[0].url|url }}">{{ section.title }}</a></li>
+          <li class="toc-section
+            {% if section.active and page.is_index %} current{% endif -%}
+          "><a href="{{ section.children[0].url|url }}">{{ section.title }}</a></li>
           {% for chapter in section.children -%}
+          {% if not chapter.is_index %}
             <li class="toc-chapter
               {% if chapter.active %} current{% endif -%}
             "><a href="{{ chapter.url|url }}">{{ chapter.title }}</a></li>
@@ -415,6 +417,7 @@ A copy of the License has been included in the root of the repository.
                {% endif -%}
             {% endfor -%}
             {% endif -%}
+          {% endif -%}
           {% endfor -%}
           {% else -%}
           <li class="toc-section"><a href="{{ section.url|url }}">{{ section.title }}</a></li>
