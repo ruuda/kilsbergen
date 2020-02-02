@@ -155,7 +155,8 @@ A copy of the License has been included in the root of the repository.
   a > code,
   h3 > code,
   li > code,
-  td > code {
+  td > code,
+  dt > code {
     background-color: #f0f0f0;
     padding: 0.13rem;
     padding-left: 0.3rem;
@@ -174,7 +175,7 @@ A copy of the License has been included in the root of the repository.
     color: #36d;
     text-decoration: none;
   }
-  p, ul, ol, pre, table {
+  p, ul, ol, dl, pre, table {
     /* Same space as line height, leave exactly one line blank. */
     margin-bottom: 1.7rem;
   }
@@ -209,6 +210,14 @@ A copy of the License has been included in the root of the repository.
     display: block;
     padding-top: 1em;
     padding-bottom: 1em;
+  }
+  dl {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-column-gap: 2em;
+  }
+  dl dt {
+    text-align: right;
   }
   #main ul li:before {
     color: #555;
