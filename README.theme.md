@@ -7,6 +7,7 @@ It is not flexible on purpose: it supports everything I need, and nothing more.
 
 ## Demos
 
+ * [Musium documentation][musium-docs]
  * [Noblit documentation][noblit-docs]
  * [Pris documentation][pris-docs]
  * [Tako documentation][tako-docs]
@@ -29,3 +30,4 @@ documentation, it is fine to just link to this readme from a comment.
 [pris]:        https://github.com/ruuda/pris
 [tako-docs]:   https://ruuda.github.io/tako
 [tako]:        https://github.com/ruuda/tako
+[musium-docs]: https://ruuda.github.io/musium
