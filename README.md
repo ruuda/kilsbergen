@@ -17,6 +17,22 @@ It is not flexible on purpose: it supports everything I need, and nothing more.
  * Responsive design
  * Zero javascript
 
+## Usage
+
+One easy way to use this theme, is to add it as a Git submodule to your `docs`
+directory. Then add the following in your `mkdocs.yml`:
+
+```yaml
+theme:
+  name: null
+  custom_dir: docs/theme
+```
+
+This theme requires MkDocs 1.1 or later. For earlier versions, delete this
+`README.md` to work around [this bug][readmebug].
+
+[readmebug]: https://github.com/mkdocs/mkdocs/issues/1766
+
 ## License
 
 Kilsbergen is licensed under the [Apache 2.0][apache2] license. In the generated
