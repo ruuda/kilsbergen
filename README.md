@@ -20,7 +20,7 @@ It is not flexible on purpose: it supports everything I need, and nothing more.
 ## Usage
 
 One easy way to use this theme, is to add it as a Git submodule to your `docs`
-directory. Then add the following in your `mkdocs.yml`:
+directory, e.g. at `docs/theme`. Then add the following in your `mkdocs.yml`:
 
 ```yaml
 theme:
