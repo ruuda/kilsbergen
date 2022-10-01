@@ -10,6 +10,7 @@ It is not flexible on purpose: it supports everything I need, and nothing more.
  * [Musium documentation][musium-docs]
  * [Noblit documentation][noblit-docs]
  * [Pris documentation][pris-docs]
+ * [Squiller documentation][squiller-docs]
  * [Tako documentation][tako-docs]
 
 ## Features
@@ -38,12 +39,13 @@ This theme requires MkDocs 1.1 or later. For earlier versions, delete this
 Kilsbergen is licensed under the [Apache 2.0][apache2] license. In the generated
 documentation, it is fine to just link to this readme from a comment.
 
-[apache2]:     https://www.apache.org/licenses/LICENSE-2.0
-[mkdocs]:      https://www.mkdocs.org/
-[noblit-docs]: https://ruuda.github.io/noblit
-[noblit]:      https://github.com/ruuda/noblit
-[pris-docs]:   https://ruuda.github.io/pris
-[pris]:        https://github.com/ruuda/pris
-[tako-docs]:   https://ruuda.github.io/tako
-[tako]:        https://github.com/ruuda/tako
-[musium-docs]: https://ruuda.github.io/musium
+[apache2]:       https://www.apache.org/licenses/LICENSE-2.0
+[mkdocs]:        https://www.mkdocs.org/
+[musium-docs]:   https://ruuda.github.io/musium
+[noblit-docs]:   https://ruuda.github.io/noblit
+[noblit]:        https://github.com/ruuda/noblit
+[pris-docs]:     https://ruuda.github.io/pris
+[pris]:          https://github.com/ruuda/pris
+[squiller-docs]: https://ruuda.github.io/squiller/
+[tako-docs]:     https://ruuda.github.io/tako
+[tako]:          https://github.com/ruuda/tako
