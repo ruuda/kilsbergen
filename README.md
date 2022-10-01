@@ -37,12 +37,23 @@ To enable anchors next to section headings, add the following to your
 
 ```yaml
 markdown_extensions:
-  toc:
-    permalink: true
-    permalink_title: null
+  - toc:
+      permalink: true
+      permalink_title: null
 ```
 
+To enable syntax highlighting, ensure that `pygmentize` is available, and add
+the following to your `mkdocs.yml`:
+
+```yaml
+markdown_extensions:
+  - codehilite
+```
+
+See also [the python-markdown list of extensions][exts].
+
 [readmebug]: https://github.com/mkdocs/mkdocs/issues/1766
+[exts]: https://python-markdown.github.io/extensions/
 
 ## License
 
