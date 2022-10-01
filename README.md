@@ -32,6 +32,16 @@ theme:
 This theme requires MkDocs 1.1 or later. For earlier versions, delete this
 `README.md` to work around [this bug][readmebug].
 
+To enable anchors next to section headings, add the following to your
+`mkdocs.yml`:
+
+```yaml
+markdown_extensions:
+  toc:
+    permalink: true
+    permalink_title: null
+```
+
 [readmebug]: https://github.com/mkdocs/mkdocs/issues/1766
 
 ## License
