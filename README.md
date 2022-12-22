@@ -62,11 +62,11 @@ documentation, it is fine to just link to this readme from a comment.
 
 [apache2]:       https://www.apache.org/licenses/LICENSE-2.0
 [mkdocs]:        https://www.mkdocs.org/
-[musium-docs]:   https://ruuda.github.io/musium
-[noblit-docs]:   https://ruuda.github.io/noblit
+[musium-docs]:   https://docs.ruuda.nl/musium/
+[noblit-docs]:   https://docs.ruuda.nl/noblit/
 [noblit]:        https://github.com/ruuda/noblit
-[pris-docs]:     https://ruuda.github.io/pris
+[pris-docs]:     https://docs.ruuda.nl/pris/
 [pris]:          https://github.com/ruuda/pris
-[squiller-docs]: https://ruuda.github.io/squiller/
-[tako-docs]:     https://ruuda.github.io/tako
+[squiller-docs]: https://docs.ruuda.nl/squiller/
+[tako-docs]:     https://docs.ruuda.nl/tako/
 [tako]:          https://github.com/ruuda/tako
