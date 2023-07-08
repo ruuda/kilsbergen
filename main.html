@@ -56,15 +56,6 @@ A copy of the License has been included in the root of the repository.
   * { margin: 0; padding: 0; border-spacing: 0; }
   html {
     font-family: Inter, Roboto, sans-serif;
-    /*
-    Turn on character variant 8 for Inter, which puts serifs on the uppercase I.
-    Also turn on variant 1, which has a curved 1.
-    Disable contextual alternates for now. There is a bug, either in Inter or
-    in Chrome (https://crbug.com/1046095) that causes colons after a <strong> to
-    be raised above the baseline.
-    */
-    font-feature-settings: 'cv01' 1, 'cv08' 1, 'calt' 0;
-
     font-size: 16px;
     line-height: 1.7em;
     background-color: #fff;
@@ -75,6 +66,14 @@ A copy of the License has been included in the root of the repository.
   }
   body {
     height: 100%;
+    /*
+    Turn on character variant 8 for Inter, which puts serifs on the uppercase I.
+    Also turn on variant 1, which has a curved 1.
+    Disable contextual alternates for now. There is a bug, either in Inter or
+    in Chrome (https://crbug.com/1046095) that causes colons after a <strong> to
+    be raised above the baseline.
+    */
+    font-feature-settings: 'cv01' 1, 'cv08' 1, 'calt' 0;
   }
   #content {
     display: grid;
