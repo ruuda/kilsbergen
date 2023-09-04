@@ -240,6 +240,7 @@ A copy of the License has been included in the root of the repository.
     margin-left: 0.87rem;
   }
   #main ol li:before {
+    float: left;
     content: counter(item);
     display: inline-block;
     font-weight: 700;
@@ -250,6 +251,27 @@ A copy of the License has been included in the root of the repository.
   #main ol li {
     margin-left: 1.6rem;
     counter-increment: item;
+  }
+  a.footnote-ref {
+      // Add some space to make notes better clickable.
+      padding-left: 1pt;
+      padding-right: 1pt;
+  }
+  .footnote {
+      color: #777;
+      font-size: 0.9rem;
+      line-height: 1.7em;
+  }
+  .footnote hr {
+      border: none;
+      border-top: 1px solid #eee;
+      margin-top: 3.5rem;
+      margin-bottom: 1.2rem;
+  }
+  #main .footnote ol li:before {
+      font-weight: 500;
+      color: #78a;
+      opacity: 0.5;
   }
   #nav-prev-next {
     margin-top: 3.4rem;
