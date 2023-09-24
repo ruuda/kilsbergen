@@ -21,7 +21,7 @@ A copy of the License has been included in the root of the repository.
     Google Fonts, the latter is by far the fastest when the docs themselves are
     not on a CDN, even though it's two additional domains to connect to. -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link href="{{ page.canonical_url }}" rel="canonical">
   <style>
   /* Inter font family, copyright Rasmus Andersson, licensed under SIL OFL 1.1,
@@ -198,10 +198,13 @@ A copy of the License has been included in the root of the repository.
     margin-right: 1.41rem;
     color: #555;
   }
-  code .k { color: #36d; }
-  code .kt, code .nb { color: #d36; }
-  code .c1, code .cm { color: #d36; font-style: italic; }
-  code .s { color: #c43; }
+  code .k { color: #36d; font-weight: 500; }
+  code .kt, code .kt { color: #36d; }
+  code .c, code .c1, code .cm { color: #888; font-style: italic; }
+  code .m { color: #599; }
+  code .s { color: #a44; }
+  code .si { color: #a44; font-weight: 500; }
+  code .se { color: #359; }
   ul, ol {
     list-style-type: none;
     counter-reset: item;
