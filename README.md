@@ -10,6 +10,7 @@ It is not flexible on purpose: it supports everything I need, and nothing more.
  * [Musium documentation][musium-docs]
  * [Noblit documentation][noblit-docs]
  * [Pris documentation][pris-docs]
+ * [RCL documentation][rcl-docs]
  * [Squiller documentation][squiller-docs]
  * [Tako documentation][tako-docs]
 
@@ -67,6 +68,7 @@ documentation, it is fine to just link to this readme from a comment.
 [noblit]:        https://github.com/ruuda/noblit
 [pris-docs]:     https://docs.ruuda.nl/pris/
 [pris]:          https://github.com/ruuda/pris
+[rcl-docs]:      https://docs.ruuda.nl/rcl/
 [squiller-docs]: https://docs.ruuda.nl/squiller/
 [tako-docs]:     https://docs.ruuda.nl/tako/
 [tako]:          https://github.com/ruuda/tako
