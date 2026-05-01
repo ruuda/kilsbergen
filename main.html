@@ -431,7 +431,13 @@ A copy of the License has been included in the root of the repository.
         <a href="{{ config.site_url|url }}">{{ config.site_name }}</a>
         {% if page.parent %} › <a href="{{ page.parent.children[0].url|url }}">{{ page.parent.title }}</a> {% endif %}
         {% if not page.is_index or not page.parent %} › <a href="{{ page.url|url }}">{{ page.title }}</a> {% endif %}
+        {% if config.repo_url.startswith("https://github.com") %}
         <a id="repo-link" href="{{ config.repo_url|url }}">GitHub</a>
+        {% elif config.repo_url.startswith("https://codeberg.org") %}
+        <a id="repo-link" href="{{ config.repo_url|url }}">Codeberg</a>
+        {% else %}
+        <a id="repo-link" href="{{ config.repo_url|url }}">Repository</a>
+        {% endif %}
       </nav>
       <article>
         {{ page.content }}
